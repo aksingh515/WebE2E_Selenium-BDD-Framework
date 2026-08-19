@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 17.80 s <<< FAILURE! -- in TestSuite
+cucumber.Options.TestRunner.runScenario["Verify login failure with invalid credentials", "To validate single product order and checkout"](2) -- Time elapsed: 15.65 s <<< FAILURE!
+java.lang.AssertionError: expected [Epic sadface: Username and password ###do not match any user in this service] but found [Epic sadface: Username and password do not match any user in this service]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at stepDefinitions.SucessOrderMsgTest.user_verifies_the_login_error_message(SucessOrderMsgTest.java:36)
+	at ✽.user verifies the login error message(file:///D:/StudyTech/EclipseWorkspase/ACucumberWeb26/src/test/java/features/Order.feature:23)
+
