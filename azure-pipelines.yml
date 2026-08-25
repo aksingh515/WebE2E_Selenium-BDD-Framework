@@ -15,19 +15,19 @@ steps:
 - task: JavaToolInstaller@1
   displayName: Install Java
   inputs:
-    versionSpec: '21'
+    versionSpec: '17'
     jdkArchitectureOption: 'x64' 
     jdkSourceOption: 'PreInstalled'
   # Run Maven build and tests
 
-- task: Maven@4
+- task: Maven@3
   displayName: Configuring maven project
   inputs:
       mavenPomFile: 'pom.xml'
       mavenOptions: '-Xmx3072m'
       javaHomeOption: 'JDKVersion'
-      jdkVersionOption: '1.21'
+      jdkVersionOption: '1.17'
       jdkArchitectureOption: 'x64' 
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
-      goals: 'clean test'
+      goals: 'clean install'
