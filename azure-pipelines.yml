@@ -20,7 +20,7 @@ steps:
     jdkSourceOption: 'PreInstalled'
   # Run Maven build and tests
 
-- task: Maven@3
+- task: Maven@4
   displayName: Configuring maven project
   inputs:
       mavenPomFile: 'pom.xml'
