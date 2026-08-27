@@ -17,6 +17,7 @@ public class Hooks {
 	@Before
 	public void setup()
 	{
+		DriverFactory.initDriver();
 		DriverFactory.getDriver().get("https://www.saucedemo.com/");
 	}
 
