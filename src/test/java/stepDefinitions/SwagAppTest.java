@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import java.io.IOException;
+import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -15,6 +16,7 @@ import utils.TestContextSetup;
 public class SwagAppTest extends BaseTest {
 
 	// global variables
+	WebDriver driver;
 	LoginPage loginPage;
 	ProductsPage productsPage;
 	CartPage cartPage;
@@ -23,7 +25,7 @@ public class SwagAppTest extends BaseTest {
 
 	// constructor helping to initialize the testContextSetup and POM classes
 	public SwagAppTest(TestContextSetup testContextSetup) throws IOException {
-
+		this.driver = testContextSetup.driver;
 		this.testContextSetup = testContextSetup;
 		this.loginPage = testContextSetup.pageObjectManager.getLoginPage();
 		this.productsPage = testContextSetup.pageObjectManager.getProductsPage();
@@ -34,7 +36,6 @@ public class SwagAppTest extends BaseTest {
 
 	@Given("user enters {string} and {string} to login the application")
 	public void user_enters_and_to_login_the_application(String user, String pass) {
-		loginPage = new LoginPage(DriverFactory.getDriver());
 		productsPage = loginPage.loginApp(user, pass);
 	}
 
