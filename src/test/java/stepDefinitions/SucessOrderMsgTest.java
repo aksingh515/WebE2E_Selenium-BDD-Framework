@@ -38,7 +38,7 @@ public class SucessOrderMsgTest extends BaseTest {
 
 	    Assert.assertEquals(
 	        actualMessage,
-	        "Epic sadface: Username and password do not match any user in this service"
+	        "Epic sadface: Username and password @@@@do not match any user in this service"
 	    );
 	}
 
