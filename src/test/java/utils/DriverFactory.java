@@ -16,6 +16,8 @@ public class DriverFactory {
             options.addArguments("--disable-save-password-bubble");
             options.addArguments("--incognito");
             options.addArguments("--headless=new");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
 
             WebDriver driver = new ChromeDriver(options);
             driver.manage().window().maximize();
