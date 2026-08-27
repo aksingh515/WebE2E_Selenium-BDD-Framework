@@ -18,8 +18,15 @@ steps:
     versionSpec: '17'
     jdkArchitectureOption: 'x64' 
     jdkSourceOption: 'PreInstalled'
-  # Run Maven build and tests
 
+# Install Chrome + ChromeDriver
+- script: |
+    sudo apt-get update
+    sudo apt-get install -y google-chrome-stable
+    sudo apt-get install -y chromium-chromedriver
+  displayName: 'Install Chrome and ChromeDriver'
+
+  # Run Maven build and tests
 - task: Maven@4
   displayName: Configuring maven project
   inputs:
@@ -30,4 +37,4 @@ steps:
       jdkArchitectureOption: 'x64' 
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
-      goals: 'package'
+      goals: 'clean test'
