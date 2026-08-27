@@ -15,6 +15,7 @@ public class DriverFactory {
             options.addArguments("--disable-notifications");
             options.addArguments("--disable-save-password-bubble");
             options.addArguments("--incognito");
+            options.addArguments("--headless=new");
 
             WebDriver driver = new ChromeDriver(options);
             driver.manage().window().maximize();
